@@ -1,5 +1,5 @@
-POS = 1 #class positive
-NEG = 0 #class negative
+POS = 1 #positive class
+NEG = 0 #negative class
 batch_size = 32 #batch size
 NUM_EPOCHS = 10 #number of epochs
 nchannels=3 #number of channels
