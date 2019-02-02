@@ -18,7 +18,7 @@ from keras.models import Model
 L1_layer = Lambda(lambda tensor:K.abs(tensor[0] - tensor[1]))
 
 #------------------------------------------------------------------------------
-def tfs(input_shape):
+def small_vgg(input_shape):
     input1 = Input(input_shape)
     x = Conv2D(64, (3, 3), activation='relu', padding='same', name='block1_conv1')(input1)
 
@@ -166,7 +166,7 @@ def generator(features, batch_size, type, executor, vec_size, vec_size2=None, wi
       blabels = np_utils.to_categorical(blabels, 2)
       if with_paths:
         if type is None:
-            yield [b1, b2, b3, b4], blabels, [p1, p2] 
+            yield [b1, b2, b3, b4], blabels, [p1, p2]
         else:
             yield [b1, b2], blabels, [p1, p2]
       else:
@@ -196,29 +196,29 @@ def run(siamese_model, type):
   ex3 = ProcessPoolExecutor(max_workers = 4)
 
   if type is None:
-    siamese_net = siamese_model(tfs(input1), tfs(input2))
+    siamese_net = siamese_model(small_vgg(input1), small_vgg(input2))
     trnGen = generator(trn, batch_size, type, ex1, input1, input2)
     tstGen = generator(tst, batch_size, type, ex2, input1, input2)
     tstGen2 = generator(tst, batch_size, type, ex3, input1, input2,True)
   elif type == 'plate':
-    siamese_net = siamese_model(input1, tfs(input1))
+    siamese_net = siamese_model(input1, small_vgg(input1))
     trnGen = generator(trn, batch_size, type, ex1, input1)
     tstGen = generator(tst, batch_size, type, ex2, input1)
     tstGen2 = generator(tst, batch_size, type, ex3, input1,None,True)
   else:
-    siamese_net = siamese_model(input2, tfs(input2))
+    siamese_net = siamese_model(input2, small_vgg(input2))
     trnGen = generator(trn, batch_size, type, ex1, input2)
     tstGen = generator(tst, batch_size, type, ex2, input2)
     tstGen2 = generator(tst, batch_size, type, ex3, input2,None,True)
 
   name = "two_stream" if type is None else type
   f1 = 'siamese_vehicle_%s.h5' % (name)
-  c1 = ModelCheckpoint(filepath=f1, 
-                      monitor='val_loss', 
-                      verbose=0, 
-                      save_best_only=True, 
-                      save_weights_only=False, 
-                      mode='auto', 
+  c1 = ModelCheckpoint(filepath=f1,
+                      monitor='val_loss',
+                      verbose=0,
+                      save_best_only=True,
+                      save_weights_only=False,
+                      mode='auto',
                       period=1)
 
   #fit model

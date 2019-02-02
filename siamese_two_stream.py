@@ -4,15 +4,15 @@ from keras.optimizers import Adam
 from utils import *
 
 #------------------------------------------------------------------------------
-def siamese_model(convnet, convnet2):
+def siamese_model(convnet_plate, convnet_car):
   left_input_P = Input((image_size_h_p,image_size_w_p,nchannels))
   right_input_P = Input((image_size_h_p,image_size_w_p,nchannels))
   left_input_C = Input((image_size_h_c,image_size_w_c,nchannels))
   right_input_C = Input((image_size_h_c,image_size_w_c,nchannels))
-  encoded_l_P = convnet(left_input_P)
-  encoded_r_P = convnet(right_input_P)
-  encoded_l_C = convnet2(left_input_C)
-  encoded_r_C = convnet2(right_input_C)
+  encoded_l_P = convnet_plate(left_input_P)
+  encoded_r_P = convnet_plate(right_input_P)
+  encoded_l_C = convnet_car(left_input_C)
+  encoded_r_C = convnet_car(right_input_C)
 
   # Add the distance function to the network
   L1_distanceP = L1_layer([encoded_l_P, encoded_r_P])
