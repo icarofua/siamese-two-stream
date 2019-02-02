@@ -12,11 +12,15 @@ pip install keras tensorflow scikit-learn futures functools
 
 #generate dataset
 python generate_dataset.py
+
 #siamese_plate
 python siamese.py plate
+
 #siamese_car
 python siamese.py car
+
 #siamese_fusion
 python siamese_two_stream.py
+
 #predict
 python siamese_pred.py siamese_vehicle_two_stream.h5
