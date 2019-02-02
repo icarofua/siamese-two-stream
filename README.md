@@ -7,20 +7,20 @@ appearance or by similar license plate strings. In our experiments, with 2 hours
 same roadway, 546 ft away, we achieved a $F$-measure and accuracy of 92.6% and 98.7%, respectively. 
 We show that the proposed network outperforms other One-Stream architectures, even if they use higher resolution image features.
 
-#installation
+##installation
 pip install keras tensorflow scikit-learn futures functools
 
-#generate dataset
+##generate dataset
 python generate_dataset.py
 
-#siamese_plate
+##siamese_plate
 python siamese.py plate
 
-#siamese_car
+##siamese_car
 python siamese.py car
 
-#siamese_fusion
+##siamese_fusion
 python siamese_two_stream.py
 
-#predict
+##predict
 python siamese_pred.py siamese_vehicle_two_stream.h5
