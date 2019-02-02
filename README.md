@@ -16,7 +16,7 @@ In our experiments, with 2 hours of videos containing 2982 vehicles, extracted f
 
 
 ## 1. Installation of the packages
-pip install keras tensorflow scikit-learn futures functools
+pip install keras tensorflow scikit-learn futures
 
 ## 2 Configuration
 config.py
