@@ -35,7 +35,4 @@ python siamese.py car
 python siamese_two_stream.py
 
 ## 5. testing the model
-python siamese_test.py siamese_vehicle_two_stream.h5
-
-## 6. testing the model using a new dataset
-python siamese_pred.py siamese_vehicle_two_stream.h5 new_dataset.json
+python siamese_test.py siamese_vehicle_two_stream.h5 dataset1_1.json

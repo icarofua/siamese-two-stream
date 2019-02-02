@@ -8,7 +8,7 @@ from keras.models import load_model
 import json
 
 ex2 = ProcessPoolExecutor(max_workers = 8)
-data = json.load(open('dataset{:d}_{:d}.json'.format(amount, multiplyNegatives)))
+data = json.load(open(argv[2]))
 tst = data['tst']
 input1 = (image_size_h_p,image_size_w_p,nchannels)
 input2 = (image_size_h_c,image_size_w_c,nchannels)
