@@ -177,7 +177,7 @@ def generator(features, batch_size, type, executor, vec_size, vec_size2=None, wi
 
 
 #------------------------------------------------------------------------------
-def run(siamese_model, type):
+def run(siamese_net, type):
   data = json.load(open('dataset%d_%d.json' % (amount, multiplyNegatives)))
   trn = data['trn']
   tst = data['tst']
@@ -196,17 +196,14 @@ def run(siamese_model, type):
   ex3 = ProcessPoolExecutor(max_workers = 4)
 
   if type is None:
-    siamese_net = siamese_model(small_vgg(input1), small_vgg(input2))
     trnGen = generator(trn, batch_size, type, ex1, input1, input2)
     tstGen = generator(tst, batch_size, type, ex2, input1, input2)
     tstGen2 = generator(tst, batch_size, type, ex3, input1, input2,True)
   elif type == 'plate':
-    siamese_net = siamese_model(input1, small_vgg(input1))
     trnGen = generator(trn, batch_size, type, ex1, input1)
     tstGen = generator(tst, batch_size, type, ex2, input1)
     tstGen2 = generator(tst, batch_size, type, ex3, input1,None,True)
   else:
-    siamese_net = siamese_model(input2, small_vgg(input2))
     trnGen = generator(trn, batch_size, type, ex1, input2)
     tstGen = generator(tst, batch_size, type, ex2, input2)
     tstGen2 = generator(tst, batch_size, type, ex3, input2,None,True)
