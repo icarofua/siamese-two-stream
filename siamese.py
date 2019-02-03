@@ -4,11 +4,14 @@ from keras.optimizers import Adam
 from utils import *
 from sys import argv
 #------------------------------------------------------------------------------
-def siamese_model(input_shape, convnet):
+def siamese_model(type):
+  if type=='plate':
+    input_shape = (image_size_h_p,image_size_w_p,nchannels)
+  else:
+    input_shape = (image_size_h_c,image_size_w_c,nchannels)
   left_input = Input(input_shape)
   right_input = Input(input_shape)
-  # Connect each 'leg' of the network to each input
-  # Remember, they have the same weights
+  convnet = small_vgg(input_shape)
   encoded_l = convnet(left_input)
   encoded_r = convnet(right_input)
 
@@ -24,4 +27,4 @@ def siamese_model(input_shape, convnet):
   return model
 #------------------------------------------------------------------------------
 if __name__ == '__main__':
-  run(siamese_model, argv[1])
+  run(siamese_model(argv[1]), argv[1])
