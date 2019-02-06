@@ -1,4 +1,4 @@
-# Demo code for paper "A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras"
+# Demo code for paper "A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras" (https://arxiv.org/abs/1902.01496)
 We describe in this paper a novel Two-Stream Siamese Neural Network for vehicle re-identification.
 
 ![Alt text](fig1.png)
