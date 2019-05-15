@@ -1,4 +1,23 @@
-# Demo code for paper "A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras" (https://arxiv.org/abs/1902.01496)
+# Demo code for paper "A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras" (https://arxiv.org/abs/1902.01496).
+
+If you find this code useful in your research, please consider citing:
+
+@article{de2019two,
+  title={A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras},
+  author={de Oliveira, Icaro O and Fonseca, Keiko VO and Minetto, Rodrigo},
+  journal={IEEE International Conference on Image Processing (ICIP)},
+  year={2019}
+}
+
+## Authors
+
+- Ícaro Oliveira de Oliveira - Universidade Tecnológica Federal do Paraná (UTFPR)
+- Keiko Veronica Ono Fonseca - Universidade Tecnológica Federal do Paraná (UTFPR)
+- Rodrigo Minetto - Universidade Tecnológica Federal do Paraná (UTFPR)
+
+This research was conducted while the authors were at the UTFPR.
+
+
 We describe in this paper a novel Two-Stream Siamese Neural Network for vehicle re-identification.
 
 ![Alt text](fig1.png)
