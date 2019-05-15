@@ -2,12 +2,12 @@
 
 If you find this code useful in your research, please consider citing:
 
-@article{de2019two,
-  title={A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras},
-  author={de Oliveira, Icaro O and Fonseca, Keiko VO and Minetto, Rodrigo},
-  journal={IEEE International Conference on Image Processing (ICIP)},
-  year={2019}
-}
+    @article{de2019two,
+        title={A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras},
+        author={de Oliveira, Icaro O and Fonseca, Keiko VO and Minetto, Rodrigo},
+        journal={IEEE International Conference on Image Processing (ICIP)},
+        year={2019}
+    }
 
 ## Authors
 
