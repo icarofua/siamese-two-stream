@@ -11,14 +11,11 @@ If you find this code useful in your research, please consider citing:
 
 ## Authors
 
-- Ícaro Oliveira de Oliveira - Universidade Tecnológica Federal do Paraná (UTFPR)
-- Keiko Veronica Ono Fonseca - Universidade Tecnológica Federal do Paraná (UTFPR)
-- Rodrigo Minetto - Universidade Tecnológica Federal do Paraná (UTFPR)
+- Ícaro Oliveira de Oliveira
+- Keiko Veronica Ono Fonseca
+- Rodrigo Minetto
 
-This research was conducted while the authors were at the UTFPR.
-
-
-We describe in this paper a novel Two-Stream Siamese Neural Network for vehicle re-identification.
+This research was conducted while the authors were at the Universidade Tecnológica Federal do Paraná (UTFPR). We describe in this paper a novel Two-Stream Siamese Neural Network for vehicle re-identification.
 
 ![Alt text](fig1.png)
 
