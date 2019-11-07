@@ -37,21 +37,14 @@ pip install keras tensorflow scikit-learn futures
 ## 2 Configuration
 config.py
 
-## 3.1 generating the dataset
-python generate_dataset.py
-
-## 3.2 Format of the dataset
-{'trn':[[img1_plate, img1_car, img2_plate, img2_car, label], ...],
-'tst':[[img1_plate, img1_car, img2_plate, img2_car, label], ...]}
-
-## 4.1 training of the siamese plate
+## 3.1 training of the siamese plate
 python siamese.py plate
 
-## 4.2 training of the siamese car
+## 3.2 training of the siamese car
 python siamese.py car
 
-## 4.3 training of the siamese two stream
+## 3.3 training of the siamese two stream
 python siamese_two_stream.py
 
-## 5. testing the model with generated dataset or other dataset following the format in 3.2.
+## 4. testing the model with generated dataset or other dataset following the format in 3.2.
 python siamese_test.py siamese_original_two_stream.h5 dataset1_1.json
