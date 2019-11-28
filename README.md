@@ -1,6 +1,6 @@
+# Deprecated: see (https://github.com/icarofua/vehicle-ReId) in order to have the full dataset and new models.
 # Demo code for paper "A Two-Stream Siamese Neural Network for Vehicle Re-Identification by Using Non-Overlapping Cameras" (https://arxiv.org/abs/1902.01496).
 
-Deprecated: see (https://github.com/icarofua/vehicle-ReId) in order to have the full dataset and new models.
 
 
 If you find this code useful in your research, please consider citing:
