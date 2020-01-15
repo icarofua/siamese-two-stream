@@ -57,6 +57,6 @@ for i in range(num_test_steps):
     w.write("%s;%s;%d;%d\n" % (p0, p1, y2, y1_class))
   times.append((duration / len(Y)))
 times = np.array(times)
-w.write('tp: %d, tn: %d, fp: %d, fn: %d P:%0.2f R:%0.2f F:%0.2f A:%0.2f' % calculate_metrics(ytrue, ypred))
+w.write('tp: %d, tn: %d, fp: %d, fn: %d P:%0.2f R:%0.2f F:%0.2f A:%0.2f\n' % calculate_metrics(ytrue, ypred))
 w.write("loadtime: %f max_time:%f min_time:%f mean_time:%f median_time:%f sum_time:%f\n" % (duration1, times.max(), times.min(), times.mean(), np.median(times), times.sum()))
 w.close()
