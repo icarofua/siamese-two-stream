@@ -74,7 +74,7 @@ def test_report(model_name, model, num_test_steps, test_gen):
 
 #------------------------------------------------------------------------------
 def load_img(img, type, vec_size, vec_size2):
-  if type is not None:
+  if type != 'two_stream':
     if type=='plate':
       iplt0 = image.load_img(img[0], target_size=vec_size)
       iplt1 = image.load_img(img[2], target_size=vec_size)
@@ -159,18 +159,18 @@ def generator(features, batch_size, type, executor, vec_size, vec_size2=None, wi
         blabels[i] = r['l']
         p1.append(r['p1'])
         p2.append(r['p2'])
-        if type is None:
+        if type == 'two_stream':
           b3[i,:,:,:] = r['i2']
           b4[i,:,:,:] = r['i3']
 
       blabels = np_utils.to_categorical(blabels, 2)
       if with_paths:
-        if type is None:
+        if type == 'two_stream':
             yield [b1, b2, b3, b4], blabels, [p1, p2]
         else:
             yield [b1, b2], blabels, [p1, p2]
       else:
-        if type is None:
+        if type == 'two_stream':
             yield [b1, b2, b3, b4], blabels
         else:
             yield [b1, b2], blabels

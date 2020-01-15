@@ -53,13 +53,12 @@ def test_report(model_name, model, num_test_steps, test_gen):
       test_report('test_plate_%d' % (k),siamese_net, tst_steps_per_epoch, tstGen2)
 
 ex2 = ProcessPoolExecutor(max_workers = 8)
-data = json.load(open())
+data = json.load(open(argv[2]))
 tst = data['tst']
 input1 = (image_size_h_p,image_size_w_p,nchannels)
 input2 = (image_size_h_c,image_size_w_c,nchannels)
 
 m = argv[1]
-type = 'two-stream'
 if 'car' in argv[1]:
   type = 'car'
   tstGen = generator(tst, batch_size, type, ex2, input2, None, True)
@@ -67,6 +66,7 @@ elif 'plate' in argv[1]:
   type = 'plate'
   tstGen = generator(tst, batch_size, type, ex2, input1, None, True)
 else:
+  type='two_stream'
   tstGen = generator(tst, batch_size, type, ex2, input1, input2, True)
 
 w = open("validation_pred_inferences_output_%s.txt" % (type), "w")
