@@ -8,4 +8,7 @@ image_size_h_p = 48 #image´s height for registration plate
 image_size_w_c = 96 #image´s width for vehicle´s shape
 image_size_h_c = 96 #image´s height for vehicle´s shape
 amount = 1 #number of frames for each registration plate that is used
-multiplyNegatives = 1 #amount multiplied by the number of positives in the test dataset
+multiplyNegatives = 10 #amount multiplied by the number of positives in the test dataset
+folder_cross1 = '../data/dataset2/Camera1'
+folder_cross2 = '../data/dataset2/Camera2'
+
